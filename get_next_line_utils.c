@@ -6,9 +6,11 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:53:01 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/14 17:14:34 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/15 20:52:20 by alberto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -18,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 
 	len = ft_strlen (s1) + ft_strlen (s2);
-	str = ft_calloc (sizeof(char), len + 1);
+	str = malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (0);
 	i = 0;
@@ -33,6 +35,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[i + j] = s2[j];
 		j++;
 	}
+	str[i + j] = '\0';
 	return (str);
 }
 
@@ -96,7 +99,9 @@ char	*ft_str(char *str, char *line)
 	char	*str_new;
 	int		i;
 	int		j;
-
+	
+	i = 0;
+	j = 0;
 	str_new = malloc(sizeof(char) * (ft_strlen (str) - ft_strlen (line) + 2));
 	if (!str_new)
 		return (0);

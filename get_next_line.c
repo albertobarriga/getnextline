@@ -1,9 +1,4 @@
-#include <fcntl.h>
-
-int main (void)
-{
-	int	fd;
-d}
+#include "get_next_line.h"
 
 char	*ft_read(int fd, char *str)
 {
@@ -22,7 +17,7 @@ char	*ft_read(int fd, char *str)
 			free (buf);
 			return (NULL);
 		}
-		srt[var] = '\0';
+		buf[var] = '\0';
 		str = ft_strjoin(str, buf);
 	}
 	free(buf);
@@ -41,6 +36,6 @@ char	*get_next_line(int fd)
 	if (!str)
 		return (NULL);
 	line = ft_line(str);
-	str = ft_str((str);
+	str = ft_str(str, line);
 	return (line);
 }
