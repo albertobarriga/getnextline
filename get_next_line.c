@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:42:13 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/17 16:45:14 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:26:47 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 char	*ft_read(int fd, char *str)
 {
 	char	*buf;
-	ssize_t	var;	
+	ssize_t	var;
+
 	buf = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buf)
 		return (NULL);
@@ -37,8 +38,9 @@ char	*ft_read(int fd, char *str)
 
 char	*get_next_line(int fd)
 {
-	static char *str;
+	static char	*str;
 	char		*line;
+
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	str = ft_read(fd, str);

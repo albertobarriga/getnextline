@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:53:01 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/18 11:01:01 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/18 13:44:54 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char	*ft_line(char *str)
 	line = (char *)malloc(sizeof(char) * (i + 2));
 	if (!line)
 		return (NULL);
+	i = 0;
 	while (str[i] && str[i] != '\n')
 	{
 		line[i] = str[i];
@@ -104,7 +105,7 @@ char	*ft_str(char *str)
 	int		j;
 
 	i = 0;
-	while (str[i]  && str[i] != '\n')
+	while (str[i] && str[i] != '\n')
 		i++;
 	if (!str[i])
 	{
