@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:52:10 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/17 15:53:31 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/18 10:47:50 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
+#  define BUFFER_SIZE 1
 # endif
 
 char	*ft_read(int fd, char *str);

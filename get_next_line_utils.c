@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:53:01 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/17 16:45:17 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:01:01 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	if (!s)
-		return (0);
+		return (NULL);
 	if (c == '\0')
 		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != '\0')
@@ -55,7 +55,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 
 size_t	ft_strlen(const char *s)
@@ -63,6 +63,8 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i] != '\0')
 		i++;
 	return (i);
@@ -102,21 +104,18 @@ char	*ft_str(char *str)
 	int		j;
 
 	i = 0;
-	j = 0;
-	while (str && str[i] != '\n')
+	while (str[i]  && str[i] != '\n')
 		i++;
-	if (!str)
+	if (!str[i])
 	{
 		free(str);
 		return (NULL);
 	}
-	str_new = malloc(sizeof(char) * (ft_strlen (str) - i + 1));
+	str_new = (char *)malloc(sizeof(char) * (ft_strlen (str) - i + 1));
 	if (!str_new)
-		return (0);
+		return (NULL);
 	i++;
-	while (str[i] && str[i] != '\n')
-		i++;
-	i++;
+	j = 0;
 	while (str[i])
 		str_new[j++] = str[i++];
 	str_new[j] = '\0';
